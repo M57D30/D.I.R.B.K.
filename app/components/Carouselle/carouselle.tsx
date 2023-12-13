@@ -67,3 +67,6 @@
 /// TODO:
 
 // Jei netyngesiu padarysiu slidery
+
+// Džiugiai Įsitrauk į Rizikingas Beliltiskas kompanijas
+// DIRBK

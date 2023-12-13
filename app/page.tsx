@@ -1,11 +1,8 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
 import React from "react";
 import Jobs from "@/public/assets/jobs.jpeg";
 import Image from "next/image";
 import Button from "./components/Button/button";
-import { fetchUsers } from "@/lib/users";
 // import Component from "./components/Carouselle/carouselle";
 
 export default function Home() {
@@ -40,5 +37,3 @@ export default function Home() {
     </div>
   );
 }
-
-// Džiugiai Įsitrauk į Rizikingas Beliltiskas kompa

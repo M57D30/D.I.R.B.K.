@@ -7,14 +7,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+/// TIK naudotojas ---> Darbuotojui. Kitu atvejeu daryt kitaip
 model atsiliepimai {
   aprasymas                  String?    @db.VarChar(255)
   tipas                      Boolean?
-  id_Atsiliepimas            Int        @id
+  id_Atsiliepimas            Int        @id @default(autoincrement())
   fk_Naudotojasid_Naudotojas Int
+  fk_darbuotojas             Int
+  rasytiAtsiliepima          darbdavys  @relation(fields: [fk_darbuotojas], references: [id])
   naudotojai                 naudotojai @relation(fields: [fk_Naudotojasid_Naudotojas], references: [id_Naudotojas], onUpdate: Restrict, map: "naudotojas_pildo_atsiliepima")
 
   @@index([fk_Naudotojasid_Naudotojas], map: "naudotojas_pildo_atsiliepima")
+  @@index([fk_darbuotojas], map: "atsiliepimai_fk_darbuotojas_fkey")
 }
 
 model atsiliepimo_tipai {
@@ -24,6 +28,7 @@ model atsiliepimo_tipai {
 
 model darbdavys {
   id                   Int                    @id @unique
+  atsiliepimai         atsiliepimai[]
   naudotojai           naudotojai             @relation(fields: [id], references: [id_Naudotojas])
   naudotoju_patiktukai naudotoju_patiktukai[]
 }
@@ -89,7 +94,7 @@ model naudotojai {
   slaptazodis                                                               String?                @db.VarChar(255)
   gimimo_data                                                               DateTime?              @db.Date
   linkedin_url                                                              String?                @db.VarChar(255)
-  paskyros_sukurimo_data                                                    DateTime?              @db.Date
+  paskyros_sukurimo_data                                                    DateTime?              @default(now()) @db.Date
   patvirtintas                                                              Boolean?
   blokavimo_pabaiga                                                         DateTime?              @db.Date
   role                                                                      Int?

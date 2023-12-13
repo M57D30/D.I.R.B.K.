@@ -29,8 +29,39 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Greitas intro
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Routais rupintis nereikia už tai jums sutvarko frameworkas. Visi puslpaiai privalo buti ./app direktorijoje. Sukuriat savo page'ui foldery (velgi, jis privalo but /app direktorijoje).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Puslpis butinai turi buti page.tsx pavadinimu. Tarkim kuriat darbo skelbimu puslapy. Jis privalo buti:
+/app/darboskelbimai/page.tsx
+
+ir pasiekti jį galit:
+localhost:3000/darboskelbimai
+
+Toliau......
+
+Jums aktualus folderiai:
+
+./app (main kodas ten bus)
+./prisma (jei koreguosit db per prisma schema)
+./public (images ir kiti sudai)
+
+Visa kita is esmes pxj
+
+## Darbai su DB
+
+Susikurkti .env faila ir ten suconfiginat savo DB
+
+Naudojam prisma. Skaitom dokumentacija. (Ten yra hardoce values nes ju paprastai negali irasyti, jie pasiemami per sausainius (man rodoz))
+
+Pavyzdys butu ./app/api/feedbackForEmployer
+
+REIKES PERDARYT DB NES PYZDAAAAAA
+
+Tikrint užklausas naudokit postmana, bus lengvesnis gyvenimas. O jei ne bus liudna.
+
+Postman:
+https://www.postman.com/
+
+#### TE PADEDA JUMS DIEVAS
